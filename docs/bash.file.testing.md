@@ -2,6 +2,7 @@
 
 [How do I tell if a regular file does not exist in Bash?](https://stackoverflow.com/questions/638975/how-do-i-tell-if-a-regular-file-does-not-exist-in-bash)
 
+```
 -b filename - Block special file
 -c filename - Special character file
 -d directoryname - Check for directory Existence
@@ -18,7 +19,9 @@
 -u filename - Check if file set-user-id bit is set
 -w filename - Check if file is writable
 -x filename - Check if file is executable
+```
 
+Example on positive test:
 ```bash
 #!/bin/bash
 file=./file
