@@ -1,5 +1,11 @@
+This project covers:
 
-This project covers cases, useful when program bash scripts.
+### Linux Command Line
+
+- [System information](docs/system.info.md)
+- [Package Management](docs/package.management.md)
+
+###  Bash programming topics:
 
 - [Running bash script, options](docs/running.bash.script.md#running-bash-script-options)
 - [Ability to run script from any path location](docs/running.bash.script.md#ability-to-run-script-from-any-path-location)
