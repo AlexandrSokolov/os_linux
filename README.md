@@ -2,6 +2,7 @@ This project covers:
 
 ### Linux Command Line
 
+- [Files search by different criteria](docs/files.search.md)
 - [System information](docs/system.info.md)
 - [Package Management](docs/package.management.md)
 
