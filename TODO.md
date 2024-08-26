@@ -1,3 +1,19 @@
+### openssl issue
+
+10269  openssl pkcs12 -in Systemuser_VAM_BM_MDB_Dev_VWPKI\ 85B2147C5FE96ED7.p12 -nocerts -out VAM_BM_MDB_DEV_certificate.pem
+10270  openssl pkcs12 -in Systemuser_VAM_BM_MDB_Dev_VWPKI_85B2147C5FE96ED7.p12 -nocerts -out VAM_BM_MDB_DEV_certificate.pem
+12070  openssl pkcs12 -info -in ingka-commercial-planning-dev-9dd937d20ebb.p12 -nodes
+12138  openssl pkcs12 -info -in ingka-commercial-planning-dev-9dd937d20ebb.p12 -nodes
+12139  openssl pkcs12 -info -in ingka-commercial-camp-prod-e858d6649e9f.p12 -nodes
+12730  openssl pkcs12 -in src/test/resources/volkswagen.p12 -nocerts -out VAM_CodeLtd_MDB_Prod_private.key
+12733  openssl pkcs12 -in src/test/resources/volkswagen.p12 -clcerts -nokeys -out VAM_CodeLtd_MDB_Dev_certificate.pem
+12800  openssl pkcs12 -export -out volkswagen.prod.p12 -in VAM_BM_MDB_PROD_certificate.pem -inkey VAM_BM_MDB_PROD_private.key
+13263  find . -name '*.p12'
+13264  history | grep p12
+
+
+###
+- 
 - read file lines into array
 ```bash
 mapfile -t projects < projects.conf
