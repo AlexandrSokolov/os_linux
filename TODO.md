@@ -1,3 +1,42 @@
+### java version update
+### maven versoin update
+### docker intallation, include tools into https://github.com/AlexandrSokolov/java_dev_environments
+### appropriate drivers, update https://github.com/AlexandrSokolov/java_dev_environments
+
+### google chrome extensions,document,save, update https://github.com/AlexandrSokolov/java_dev_environments
+
+Adblock Plus - free ad blocker
+chrome://extensions/?id=cfhdojbkjhnklbpkdaibdccddilifddb
+
+AdBlock — block ads across the web
+chrome://extensions/?id=gighmmpiobklfepjocnamgkkbiglidom
+
+Dark Theme - Dark Reader for Chrome 1.0.9
+chrome://extensions/?id=eckokfcjbjbgjifpcbdmengnabecdakp
+
+Google Docs Offline 1.80.1
+chrome://extensions/?id=ghbmnnjooekpmoecnnnilnnbdlolhkhi
+
+Live Stream Downloader 0.4.8
+chrome://extensions/?id=looepbdllpjgdmkpdcdffhdbmpbcfekj
+
+Chameleon 1.8.7 ? savefrom.net
+chrome://extensions/?id=dmpojjilddefgnhiicjcmhbkjgbbclob
+
+CrossPilot
+chrome://extensions/?id=migomhggnppjdijnfkiimcpjgnhmnale
+
+Linguee Audio Download
+chrome://extensions/?id=mldkoedmkpceicjeobmilbdeebdeljgc
+
+Talend API Tester - Free Edition
+chrome://extensions/?id=aejoelaoggembcahagimdiliamlcdmfm
+
+Postman
+chrome://extensions/?id=fhbjgbiflinjbdggehcddcbncdddomop
+
+### react frontend instalation, update https://github.com/AlexandrSokolov/java_dev_environments
+
 ### openssl issue
 
 10269  openssl pkcs12 -in Systemuser_VAM_BM_MDB_Dev_VWPKI\ 85B2147C5FE96ED7.p12 -nocerts -out VAM_BM_MDB_DEV_certificate.pem
@@ -11,6 +50,8 @@
 13263  find . -name '*.p12'
 13264  history | grep p12
 
+
+### sftp issue
 
 ###
 - 
