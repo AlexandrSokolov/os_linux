@@ -1,10 +1,12 @@
 
 * [How to update `known_hosts`](#how-to-update-known_hosts)
+* [Ignore `known_hosts` checks](#ignore-known_hosts-checks)
 * [Generating ssh private and public keys with a comment](#generating-ssh-private-and-public-keys-with-a-comment)
 * [Compare the public key on the host with a saved line in `known_hosts`](#compare-the-public-key-on-the-host-with-a-saved-line-in-known_hosts)
 * [What happens when the public key the host has changes? Solution](#what-happens-when-the-public-key-the-host-has-changes-solution)
 * [What data does `known_hosts` contain?](#what-data-does-known_hosts-contain)
-* [Host keys location](#host-keys-location)
+* [`known_hosts` location](#known_hosts-location)
+* [ssh host keys location](#ssh-host-keys-location)
 * [he purpose of having host keys in `known_hosts`](#the-purpose-of-having-host-keys-in-known_hosts)
 
 ### The purpose of having host keys in `known_hosts`
@@ -14,7 +16,7 @@ Its purpose is for the client to authenticate the server they are connecting to 
 
 If you remove known_host entries, you are vulnerable to a man-in-the-middle attack.
 
-### Host keys location
+### `known_hosts` location
 
 By default, it is: `$HOME/.ssh/known_hosts`
 

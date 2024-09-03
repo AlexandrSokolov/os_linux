@@ -6,6 +6,9 @@ This project covers:
 - [System information](docs/system.info.md)
 - [Package Management](docs/package.management.md)
 
+### System configuration topics:
+- [host keys and `known_hosts`](docs/system/host.keys.md)
+
 ###  Bash programming topics:
 
 - [Running bash script, options](docs/running.bash.script.md#running-bash-script-options)
