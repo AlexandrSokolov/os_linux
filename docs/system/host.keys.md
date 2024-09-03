@@ -112,10 +112,17 @@ If you know that host changed its public key, you need to:
       UserKnownHostsFile /dev/null
       GlobalKnownHostsFile /dev/null
     ```
-2. Per client/application. Set `StrictHostKeyChecking` property to `no` when you run it.
-
-    You could do that via property set: `-DStrictHostKeyChecking=no` or you could set it programmatically.
-
+2. With `jsch` sftp library:
+    
+    Globally per library (useful option for test purpose):
+    ```java
+    import com.jcraft.jsch.JSch;
+    JSch.setConfig("StrictHostKeyChecking", "no");
+    ```
+    Per session:
+    ```java
+    jschSession.setConfig("StrictHostKeyChecking", "no");
+    ```
 3. Per ssh connection:
     ```bash
     ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o GlobalKnownHostsFile=/dev/null 192.168.6.66
