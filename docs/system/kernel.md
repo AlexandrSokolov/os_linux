@@ -1,0 +1,11 @@
+https://askubuntu.com/questions/183515/how-do-i-find-the-kernel-version-ubuntu-release-and-disk-partition-information
+https://www.cyberciti.biz/faq/howto-upgrading-the-ubuntu-linux-kernel/
+https://www.dedicatedcore.com/blog/update-linux-kernel-ubuntu/
+https://www.omgubuntu.co.uk/2024/01/ubuntu-2204-linux-6-5-kernel-update
+https://www.makeuseof.com/upgrade-linux-kernel-in-ubuntu/
+https://vsys.host/how-to/how-to-update-linux-kernel-in-ubuntu
+https://ubuntu.com/kernel
+https://sypalo.com/how-to-upgrade-ubuntu
+https://9to5linux.com/you-can-now-install-linux-kernel-6-8-on-ubuntu-heres-how
+https://askubuntu.com/questions/1388115/how-do-i-update-my-kernel-to-the-latest-one
+https://itsfoss.com/upgrade-linux-kernel-ubuntu/
