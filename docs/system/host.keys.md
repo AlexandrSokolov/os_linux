@@ -1,12 +1,16 @@
 
 * [How to update `known_hosts`](#how-to-update-known_hosts)
 * [Ignore `known_hosts` checks](#ignore-known_hosts-checks)
-* [Generating ssh private and public keys with a comment](#generating-ssh-private-and-public-keys-with-a-comment)
+* [Generating ssh private and public keys with a comment](ssh.md/#generating-ssh-private-and-public-keys-with-a-comment)
+
+
+* [ssh host keys location](#ssh-host-keys-location) 
+* [SSH key pair location on the client host](#ssh-key-pair-location-on-the-client-host)
+* [`known_hosts` location](#known_hosts-location)
 * [Compare the public key on the host with a saved line in `known_hosts`](#compare-the-public-key-on-the-host-with-a-saved-line-in-known_hosts)
+* 
 * [What happens when the public key the host has changes? Solution](#what-happens-when-the-public-key-the-host-has-changes-solution)
 * [What data does `known_hosts` contain?](#what-data-does-known_hosts-contain)
-* [`known_hosts` location](#known_hosts-location)
-* [ssh host keys location](#ssh-host-keys-location)
 * [he purpose of having host keys in `known_hosts`](#the-purpose-of-having-host-keys-in-known_hosts)
 
 ### The purpose of having host keys in `known_hosts`
@@ -136,21 +140,9 @@ Both private and public ssh host keys usually are located under `/etc/ssh`. Exam
 - `/etc/ssh/ssh_host_ed25519_key`
 - `/etc/ssh/ssh_host_ed25519_key.pub`
 
-### Generating ssh private and public keys with a comment:
+### SSH key pair location on the client host
 
-Recommended:
-```bash
-ssh-keygen -t ed25519 -C "my comment"
-```
-If you do not set the comment explicitly, your current `user@host` will be used by default
-
-On legacy systems that do not support `ed25519`, run:
-```bash
- ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-```
-
-Save both private and public keys on the host under `/etc/ssh`.
-The client after the first connection, will save the public key in its `known_hosts` file.
+The client after the first connection, will save only the public host key in its `known_hosts` file.
 
 ### Compare the public key on the host with a saved line in `known_hosts`
 

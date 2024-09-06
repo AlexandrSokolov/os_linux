@@ -7,6 +7,7 @@ This project covers:
 - [Package Management](docs/package.management.md)
 
 ### System configuration topics:
+- [ssh key-based authentication](docs/system/ssh.md)
 - [host keys and `known_hosts`](docs/system/host.keys.md)
 
 ###  Bash programming topics:
