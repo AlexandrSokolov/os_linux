@@ -125,11 +125,8 @@ On legacy systems that do not support `ed25519`, run:
 
 For instance, you already have key-based auth configured. But you want to add additional public keys for the users.
 ```bash
-ssh-copy-id -i new_public_key_you_want_to_add -o 'IdentityFile ~/.ssh/your_existing_key' username@remote_host
+ssh-copy-id -i new_public_key_you_want_to_add -o 'IdentityFile ~/.ssh/your_existing_private_key' username@remote_host
 ```
-
-TODO: not clear if `${your_existing_key}` your private or public key.
-Looks as `IdentityFile` - is the private key!
 
 ### Authenticating to the server using SSH keys
 
