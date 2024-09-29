@@ -1,3 +1,18 @@
+Steps:
+- [Find the latest versions of the packages](#find-out-what-the-latest-version-of-each-package)
+- [See which packages can be upgraded](#see-which-packages-can-be-upgraded)
+- [Apply packages update](#apply-packages-update)
+- [Remove the unnecessary packages](#remove-the-unnecessary-packages)
+- [How to apply update and remove with a single command?](#how-to-apply-update-and-remove-with-a-single-command)
+
+- [How to Upgrade to the Latest Version of Ubuntu](#how-to-upgrade-to-the-latest-version-of-ubuntu)
+
+Issues:
+- [Fix `W: Target Packages ... is configured multiple times in`](#fix-w-target-packages--is-configured-multiple-times-in)
+- [Not all the packages get updated](#not-all-the-packages-get-updated)
+
+FAQ:
+- [What's the Difference Between `apt-get` and `apt`?](#whats-the-difference-between-apt-get-and-apt)
 
 ### Find out what the latest version of each package
 
@@ -54,6 +69,10 @@ You can remove those unnecessary packages:
 ```bash
 sudo apt autoremove
 ```
+Remove together with the configuration files:
+```bash
+sudo apt autoremove --purge
+```
 
 ### Not all the packages get updated
 
@@ -84,9 +103,9 @@ The following upgrades have been deferred due to phasing
 
 For the most part, `apt` and `apt-get` can be used interchangeably
 
-### How to update your Linux release:
+### How to apply update and remove with a single command?
 
-Updates and remove packages, if needed.
+It updates and remove packages, if needed. 
 
 ```bash
 sudo apt-get dist-upgrade
@@ -95,3 +114,24 @@ or:
 ```bash
 sudo apt full-upgrade
 ```
+
+### How to Upgrade to the Latest Version of Ubuntu
+
+Make sure we have `update-manager-core` installed:
+```bash
+sudo apt install update-manager-core
+```
+check for the newest available version of Ubuntu:
+```bash
+sudo do-release-upgrade -c
+```
+if a new version is found and you want to upgrade to it:
+```bash
+sudo do-release-upgrade
+```
+Restart and verify Version Upgrade:
+```bash
+lsb_release -a
+```
+
+[How to Upgrade to the Latest Version of Ubuntu](https://www.baeldung.com/linux/ubuntu-upgrade-latest)
