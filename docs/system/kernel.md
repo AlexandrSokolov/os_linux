@@ -1,7 +1,7 @@
+- [Manage kernel with `mainline`](#install-kernel-with-mainline)
 - [Verify the Version of the Current Kernel](#verify-the-version-of-the-current-kernel)
 - [Update kernel with packages update](#update-kernel-with-packages-update)
 - [Download and install kernel manually](#download-and-install-kernel-manually)
-- [Install kernel with `mainline`](#install-kernel-with-mainline)
 - [Load with one of the previously installed Kernel version](#load-with-one-of-the-previously-installed-kernel-version)
 - [Rollback the changes and downgrade the Linux Kernel](#rollback-the-changes-and-downgrade-the-linux-kernel)
 
