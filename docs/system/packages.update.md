@@ -73,6 +73,12 @@ Remove together with the configuration files:
 ```bash
 sudo apt autoremove --purge
 ```
+Remove all downloaded `.deb` files from the package caches:
+```bash
+sudo apt clean
+```
+`autoclean` cleans obsolete deb-packages, less than `clean`
+
 
 ### Not all the packages get updated
 
