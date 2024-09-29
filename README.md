@@ -5,6 +5,7 @@ This project covers:
 - [Files search by different criteria](docs/files.search.md)
 - [System information](docs/system.info.md)
 - [Package Management](docs/package.management.md)
+- [Packages update](docs/system/packages.update.md)
 
 ### System configuration topics:
 - [ssh key-based authentication](docs/system/ssh.md)
