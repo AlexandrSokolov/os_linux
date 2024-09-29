@@ -1,9 +1,27 @@
-Download: 3.50 Mbps
-Upload: 20.05 Mbps
+## Wi-Fi Performance Boost
+- [Restart NetworkManager](#restart-networkmanager)
+- [Speed test](#speed-test)
+- [Set parameters](#set-parameters)
+- [Change to preferring IPv4 over IPv6](#change-to-preferring-ipv4-over-ipv6)
+- [Disable Power Management](#disable-power-management)
+- [Disable Wi-Fi Power Saving](#disable-wi-fi-power-saving)
+- [Change `11n_disable` parameter](#change-11n_disable-parameter)
 
-Very Slow Download Speed on Ubuntu 20.04 with a wired connection
+#### What might help, but ideally should not be touched:
+- [Remove `backport-iwlwifi-dkms`](#remove-backport-iwlwifi-dkms)
+- [**Do not do that**! Disable Active-State Power Management (ASPM)](#disable-active-state-power-management-aspm)
 
-### Restart NetworkManager after each change to avoid rebooting:
+## Current information on Wi-Fi devices and drivers
+- [Get info on the current Wi-Fi controller](#get-info-on-the-current-wi-fi-controller)
+- [Wi-Fi module configuration](#wi-fi-module-configuration)
+- [`iwlwifi` modules info, including list of possible parameters](#iwlwifi-modules-info-including-list-of-possible-parameters)
+- [List of loaded/current parameters](#list-of-loadedcurrent-parameters)
+
+## [System logs from network devices](#system-logs-from-network-devices) 
+
+### Restart NetworkManager
+
+Helps to avoid rebooting after each change applied
 
 ```bash
 sudo systemctl restart NetworkManager
@@ -68,7 +86,7 @@ sudo wget -O /lib/firmware/ath10k/QCA6174/hw3.0/firmware-4.bin https://github.co
 sudo chmod +x /lib/firmware/ath10k/QCA6174/hw3.0/*
 ```
 
-### Current configuration of Wi-Fi module
+### Wi-Fi module configuration
 
 ```bash
 iwconfig
@@ -117,7 +135,7 @@ parm:           disable_11ax:Disable HE capabilities (default: false) (bool)
 parm:           disable_11be:Disable EHT capabilities (default: false) (bool)
 ```
 
-### List of loaded/current parameters:
+### List of loaded/current parameters
 
 ```bash
 sudo apt install sysfsutils
@@ -175,7 +193,7 @@ sudo dmesg -T | grep "wlp0s20f3\|iwlwifi"
 ```
 Note: `wlp0s20f3` - name from `iwconfig`
 
-### Change to preferring IPv4 over IPv6.
+### Change to preferring IPv4 over IPv6
 
 System preferring IPv6 over IPv4. To change to preferring IPv4 over IPv6:
 
@@ -200,11 +218,10 @@ sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1
 ```
 If the temporary disablement works, make the changes permanent by running the following commands:
 ```bash
-sudo su
-echo "#disable ipv6" >> /etc/sysctl.conf
-echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
-echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
-echo "net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf
+echo "#disable ipv6"  | sudo tee -a /etc/sysctl.conf
+echo "net.ipv6.conf.all.disable_ipv6 = 1" | sudo tee -a /etc/sysctl.conf
+echo "net.ipv6.conf.default.disable_ipv6 = 1" | sudo tee -a /etc/sysctl.conf
+echo "net.ipv6.conf.lo.disable_ipv6 = 1" | sudo tee -a /etc/sysctl.conf
 ```
 
 ### Disable Power Management:
@@ -246,7 +263,7 @@ wlp0s20f3  IEEE 802.11  ESSID:"EasyBox-033576"
 
 Check if this setting helped.
 
-### Disable Wi-Fi Power Saving 
+### Disable Wi-Fi Power Saving
 
 Note: It is not the same as `Power Management`!
 
@@ -271,25 +288,6 @@ sudo systemctl restart NetworkManager.service
 
 [Extremely slow wifi between Ubuntu 24.04 LTS laptop and Deco M5 mesh access points](https://superuser.com/questions/1843548/extremely-slow-wifi-between-ubuntu-24-04-lts-laptop-and-deco-m5-mesh-access-poin)
 
-### Disable Active-State Power Management (ASPM)
-
-Note: probably is not actual anymore. Use it as the last option, it affects all hardware.
-
-```bash
-sudo subl /etc/default/grub
-```
-add `pcie_aspm=off` in:
-```text
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pcie_aspm=off"
-```
-and run:
-```bash
-sudo update-grub
-```
-
-`pcie_aspm` is some sort of power management thing which probably puts the network controller to sleep or something.
-
-[Ubuntu 20.04 slow download speed (wired network)](https://askubuntu.com/a/1347459/458132)
 
 ### Change `11n_disable` parameter
 
@@ -311,7 +309,6 @@ sudo modprobe iwlwifi 11n_disable=disable
 ```
 In my case `11n_disable=disable` showed the best result
 
-
 ### Remove `backport-iwlwifi-dkms`
 
 It was a reason in certain cases. 
@@ -322,3 +319,23 @@ I don't have this package installed
 
 [Remove `backport-iwlwifi-dkms` for performance](https://askubuntu.com/a/1231662/458132)
 
+
+### Disable Active-State Power Management (ASPM)
+
+Note: do not do that! It affects all hardware.
+
+```bash
+sudo subl /etc/default/grub
+```
+add `pcie_aspm=off` in:
+```text
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pcie_aspm=off"
+```
+and run:
+```bash
+sudo update-grub
+```
+
+`pcie_aspm` is some sort of power management thing which probably puts the network controller to sleep or something.
+
+[Ubuntu 20.04 slow download speed (wired network)](https://askubuntu.com/a/1347459/458132)
