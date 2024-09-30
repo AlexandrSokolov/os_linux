@@ -7,11 +7,14 @@ This project covers:
 - [Package Management](docs/package.management.md)
 - [Packages update](docs/system/packages.update.md)
 - [Update Kernel](docs/system/kernel.md)
-- [Wi-Fi performance boost](docs/hardware/wifi.md)
 
 ### System configuration topics:
 - [ssh key-based authentication](docs/system/ssh.md)
 - [host keys and `known_hosts`](docs/system/host.keys.md)
+
+### Hardware topics
+- [Wi-Fi performance boost](docs/hardware/wifi.md)
+- [Disks management](docs/hardware/disks.md)
 
 ###  Bash programming topics:
 

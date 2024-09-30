@@ -34,8 +34,36 @@ Run this test several times to get the reasonable value.
 
 ```bash
 sudo apt  install speedtest-cli
-speedtest-cli --secure 
+speedtest-cli --secure --simple
+Ping: 18.127 ms
+Download: 1.23 Mbit/s
+Upload: 33.15 Mbit/s
 ```
+Alternative speedtest from `Ookla`:
+
+[`Download for Linux` from the official page](https://www.speedtest.net/ru/apps/cli)
+
+Extract the tgz file.
+In the extracted folder you'll find the `speedtest` file. 
+
+Run it:
+```bash
+./speedtest
+
+   Speedtest by Ookla
+
+      Server: Pfalzkom GMBH - Ludwigshafen (id: 28818)
+         ISP: Vodafone Germany
+Idle Latency:    14.48 ms   (jitter: 0.69ms, low: 14.09ms, high: 15.29ms)
+    Download:     3.89 Mbps (data used: 6.6 MB)                                                   
+                591.75 ms   (jitter: 84.49ms, low: 104.86ms, high: 2927.72ms)
+      Upload:    35.56 Mbps (data used: 42.8 MB)                                                   
+                 50.40 ms   (jitter: 30.30ms, low: 17.51ms, high: 588.17ms)
+ Packet Loss:     0.0%
+  Result URL: https://www.speedtest.net/result/c/93259aa5-9cc9-45c4-bcb9-ced630e67fd5
+```
+
+[Direct link to download the tgz file](https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-linux-x86_64.tgz)
 
 ### Get info on the current Wi-Fi controller
 

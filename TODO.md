@@ -5,6 +5,41 @@ TODO (after restart the parameters must be saved and ipv6 must be disabled!):
 
 ### try to restore other, not ipv6 related params, check how it affects speed
 
+(they might be possibly obsolete)
+
+### wifi try Switch from 2.4Ghz band to 5GHz band
+
+sudo nano /etc/NetworkManager/system-connections/Starlink.nmconnection
+
+# 5GHz band only
+band=a
+
+# 2.4 GHz band only
+band=bg
+
+
+https://developerinsider.co/how-to-fix-ubuntu-slow-wi-fi-internet-speed/
+
+### wifi
+
+use software-based encryption over hardware encryption for your adapter.
+echo "options ath9k nohwcrypt=1" >> /etc/modprobe.d/ath9k.conf
+
+### wifi 
+
+sudo modprobe iwlwifi 11n_disable=1
+It’s worth noting that in newer kernels, 
+doing this will also disable the 802.11ac protocol and will limit the device throughput to 54 Mbps as mentioned in Gentoo’s wiki page.
+https://wiki.gentoo.org/wiki/Iwlwifi
+
+echo "options iwlwifi 11n_disable=1" >> /etc/modprobe.d/iwlwifi.conf
+
+### Solution 3: Fix the bug in Debian Avahi-daemon
+
+https://itsfoss.com/speed-up-slow-wifi-connection-ubuntu/
+
+
+
 ### java version update
 ### maven versoin update
 ### docker intallation, include tools into https://github.com/AlexandrSokolov/java_dev_environments
