@@ -29,6 +29,9 @@ sudo systemctl restart NetworkManager
 
 ### Speed test
 
+Note: the range of results with the same configuration might be high. 
+Run this test several times to get the reasonable value.
+
 ```bash
 sudo apt  install speedtest-cli
 speedtest-cli --secure 
@@ -210,13 +213,34 @@ precedence ::ffff:0:0/96  100
 
 [Change to preferring IPv4 over IPv6](https://askubuntu.com/a/1232022/458132)
 
-Additionally, you could disable IPv6 Support entirely:
+Additionally, you could disable IPv6 Support entirely.
+
+Chech the current configuration:
+```bash
+sysctl -a | grep disable_ipv6
+net.ipv6.conf.all.disable_ipv6 = 0
+net.ipv6.conf.default.disable_ipv6 = 0
+net.ipv6.conf.lo.disable_ipv6 = 0
+```
+Run:
 ```bash
 sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
 sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1
 ```
 If the temporary disablement works, make the changes permanent by running the following commands:
+
+TODO (after restart the parameters must be saved and ipv6 must be disabled!): 
+> Remove custom net.* parameters from /etc/sysctl.conf and place in /etc/ufw/sysctl.conf
+```text
+#disable ipv6
+net/ipv6/conf/all/disable_ipv6=1
+net/ipv6/conf/default/disable_ipv6=1
+net/ipv6/conf/lo/disable_ipv6=1
+```
+But it did not help!
+
+[test and finish after rebooting](https://askubuntu.com/questions/1053997/etc-sysctl-conf-settings-do-not-last-after-reboot)
 ```bash
 echo "#disable ipv6"  | sudo tee -a /etc/sysctl.conf
 echo "net.ipv6.conf.all.disable_ipv6 = 1" | sudo tee -a /etc/sysctl.conf
@@ -322,7 +346,7 @@ I don't have this package installed
 
 ### Disable Active-State Power Management (ASPM)
 
-Note: do not do that! It affects all hardware.
+Note: do not do that! It affects all hardware. Your dock station might start working incorrectly.
 
 ```bash
 sudo subl /etc/default/grub
@@ -336,6 +360,29 @@ and run:
 sudo update-grub
 ```
 
-`pcie_aspm` is some sort of power management thing which probably puts the network controller to sleep or something.
+To enable ASPM back, change it to:
+```text
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pcie_aspm=force"
+```
+and run:
+```bash
+sudo update-grub
+```
+then restart.
+
+Then remove it again to the default value without having `pcie_aspm` parameter:
+```text
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+```
+and run:
+```bash
+sudo update-grub
+```
+then restart.
+
+Check `ASPM` logs:
+```bash
+sudo dmesg | grep ASPM
+```
 
 [Ubuntu 20.04 slow download speed (wired network)](https://askubuntu.com/a/1347459/458132)

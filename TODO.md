@@ -1,24 +1,9 @@
-Download speed very slow in Ubuntu 20.04.1 while upload speed is perfectly fine over wifi
+### 
 
-###
+TODO (after restart the parameters must be saved and ipv6 must be disabled!):
+> Remove custom net.* parameters from /etc/sysctl.conf and place in /etc/ufw/sysctl.conf
 
-https://monikeo.medium.com/supercharge-your-wi-fi-speed-effective-tips-to-boost-wi-fi-performance-in-ubuntu-3a8bb7a8aa45
-
-### firmware
-
-https://github.com/xmm7360/xmm7360-pci/blob/master/INSTALLING.md
-https://www.intel.com/content/www/us/en/support/articles/000005511/wireless.html
-https://wiki.gentoo.org/wiki/Iwlwifi
-
-
-https://unix.stackexchange.com/questions/721472/where-can-i-find-the-latest-firmware-for-linux/721473#721473
-https://unix.stackexchange.com/questions/710036/possible-missing-firmware-although-firmware-is-installed
-https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/about/
-https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/refs/
-https://gitlab.com/kernel-firmware/linux-firmware
-https://wiki.debian.org/Firmware#Firmware_missing_from_Debian
-
-
+### try to restore other, not ipv6 related params, check how it affects speed
 
 ### java version update
 ### maven versoin update
@@ -74,6 +59,10 @@ chrome://extensions/?id=fhbjgbiflinjbdggehcddcbncdddomop
 
 
 ### sftp issue
+
+### etckeeper
+
+[How to Manage /etc with Version Control Using Etckeeper on Linux](https://www.tecmint.com/manage-etc-with-version-control-using-etckeeper/)
 
 ###
 - 
