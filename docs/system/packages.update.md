@@ -5,6 +5,7 @@ Steps:
 - [Remove the unnecessary packages](#remove-the-unnecessary-packages)
 - [How to apply update and remove with a single command?](#how-to-apply-update-and-remove-with-a-single-command)
 
+- [Reinstall `snap`]()
 - [How to Upgrade to the Latest Version of Ubuntu](#how-to-upgrade-to-the-latest-version-of-ubuntu)
 
 Issues:
@@ -119,6 +120,22 @@ sudo apt-get dist-upgrade
 or:
 ```bash
 sudo apt full-upgrade
+```
+
+### Reinstall `snap`
+
+Check and fix any broken nap packages by performing in sequence:
+```bash
+sudo apt update --fix-missing
+sudo apt install -f
+sudo dpkg --configure -a
+sudo apt clean
+```
+
+Install and list installed by `snap` packages:
+```bash
+sudo apt install snapd
+snap list
 ```
 
 ### How to Upgrade to the Latest Version of Ubuntu
