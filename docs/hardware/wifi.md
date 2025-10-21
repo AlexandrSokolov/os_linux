@@ -344,7 +344,7 @@ Additionally, you could disable IPv6 Support entirely.
 
 Chech the current configuration:
 ```bash
-sysctl -a | grep disable_ipv6
+sudo sysctl -a | grep disable_ipv6
 net.ipv6.conf.all.disable_ipv6 = 0
 net.ipv6.conf.default.disable_ipv6 = 0
 net.ipv6.conf.lo.disable_ipv6 = 0

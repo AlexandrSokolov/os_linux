@@ -1,4 +1,5 @@
 Steps:
+- [Determine specific ARM architecture](#determine-specific-arm-architecture)
 - [Find the latest versions of the packages](#find-out-what-the-latest-version-of-each-package)
 - [See which packages can be upgraded](#see-which-packages-can-be-upgraded)
 - [Apply packages update](#apply-packages-update)
@@ -14,6 +15,18 @@ Issues:
 
 FAQ:
 - [What's the Difference Between `apt-get` and `apt`?](#whats-the-difference-between-apt-get-and-apt)
+
+### Determine specific ARM architecture
+
+```bash
+dpkg --print-architecture
+amd64
+```
+Alternative option:
+```bash
+$ arch
+x86_64
+```
 
 ### Find out what the latest version of each package
 
