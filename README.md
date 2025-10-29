@@ -1,5 +1,13 @@
 This project covers:
 
+- [Linux Command Line](#linux-command-line)
+- [System configuration topics](#system-configuration-topics)
+- [Hardware topics](#hardware-topics)
+- [Bash programming topics](#bash-programming-topics)
+
+Linux Tools:
+- [Convert Ravensburger `tiptoi` audio files to `mp3`](docs/tiptoi_to_mp3.md)
+
 ### Linux Command Line
 
 - [Files search by different criteria](docs/files.search.md)
@@ -17,7 +25,7 @@ This project covers:
 - [Wi-Fi performance boost](docs/hardware/wifi.md)
 - [Disks management](docs/hardware/disks.md)
 
-###  Bash programming topics:
+### Bash programming topics:
 
 - [Running bash script, options](docs/running.bash.script.md#running-bash-script-options)
 - [Ability to run script from any path location](docs/running.bash.script.md#ability-to-run-script-from-any-path-location)
