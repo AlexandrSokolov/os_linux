@@ -1,6 +1,10 @@
 ### java version update
 ### maven versoin update
 ### docker intallation, include tools into https://github.com/AlexandrSokolov/java_dev_environments
+### mp3 to text
+
+- [Convert speech (mp3 audio files) to text](https://askubuntu.com/questions/837408/convert-speech-mp3-audio-files-to-text)
+
 ### appropriate drivers, update https://github.com/AlexandrSokolov/java_dev_environments
 
 ### google chrome extensions,document,save, update https://github.com/AlexandrSokolov/java_dev_environments
