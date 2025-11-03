@@ -268,6 +268,21 @@ sudo systemctl restart ssh
 
 ### Fix `ssh: Could not resolve hostname github.com: Temporary failure in name resolution`
 
+- Open Wi-Fi network configuration, select the network you are connected to
+- Select `IPv4` tab
+- Disable `Automatic` DNS, and set explicitly: `8.8.8.8, 8.8.4.4`
+- Click `Apply`
+- Restart the network 
+    ```bash
+    sudo systemctl restart NetworkManager
+    ```
+- Check the ssh connection:
+    ```bash
+    ssh -T git@github.com
+    Hi AlexandrSokolov! You've successfully authenticated, but GitHub does not provide shell access.
+    ```
+
+#### Non-working solution trying to edit `/etc/resolv.conf` manually
 You push to the git repository and get:
 ```bash
 $ git push -u origin master
