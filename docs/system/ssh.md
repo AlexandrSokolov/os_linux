@@ -266,6 +266,30 @@ sudo systemctl restart ssh
 
     [See also: `Key based SSH login that requires both key AND password`](https://askubuntu.com/questions/1019999/key-based-ssh-login-that-requires-both-key-and-password)
 
+### Fix `ssh: Could not resolve hostname github.com: Temporary failure in name resolution`
+
+You push to the git repository and get:
+```bash
+$ git push -u origin master
+ssh: Could not resolve hostname github.com: Temporary failure in name resolution
+fatal: Could not read from remote repository.
+```
+By default, linux `/etc/resolv.conf` contains only local `systemd-resolved`, available at `127.0.0.53`: 
+```bash
+$ cat /etc/resolv.conf | grep nameserver
+nameserver 127.0.0.53
+```
+Not clear the reason, why it suddenly stopped working. 
+
+
+Solution: add additional nameserver configurations:
+```bash
+$ cat /etc/resolv.conf | grep nameserver
+nameserver 127.0.0.53
+nameserver 8.8.4.4
+nameserver 8.8.8.8
+```
+
 ### todo
 
 Consider some other IT tasks:

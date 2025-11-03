@@ -10,6 +10,7 @@ Linux Tools:
 
 ### Linux Command Line
 
+- [Enrich Linux Command Line](docs/linux.cmi.md)
 - [Files search by different criteria](docs/files.search.md)
 - [System information](docs/system.info.md)
 - [Package Management](docs/package.management.md)
@@ -20,6 +21,7 @@ Linux Tools:
 ### System configuration topics:
 - [ssh key-based authentication](docs/system/ssh.md)
 - [host keys and `known_hosts`](docs/system/host.keys.md)
+- [Fix `ssh: Could not resolve hostname xxx.com: Temporary failure in name resolution`](docs/system/ssh.md#fix-ssh-could-not-resolve-hostname-githubcom-temporary-failure-in-name-resolution)
 
 ### Hardware topics
 - [Wi-Fi performance boost](docs/hardware/wifi.md)

@@ -1,0 +1,14 @@
+# mappings for Ctrl-left-arrow and Ctrl-right-arrow for word moving
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+
+# Incremental history searching
+"\e[C": forward-char
+"\e[D": backward-char
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
