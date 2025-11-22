@@ -6,7 +6,8 @@ This project covers:
 - [Bash programming topics](#bash-programming-topics)
 
 Linux Tools:
-- [Reduce file size using `ffmpeg`](docs/ffmpeg/reduce.file.size.md)
+- [Reduce media file size using `ffmpeg`](docs/ffmpeg/reduce.file.size.md)
+- [Rotate video file size using `ffmpeg`](docs/ffmpeg/rotate.file.md)
 - [Convert Ravensburger `tiptoi` audio files to `mp3`](docs/tiptoi_to_mp3.md)
 
 ### Linux Command Line
