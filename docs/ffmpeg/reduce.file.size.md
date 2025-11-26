@@ -1,7 +1,7 @@
 
 - [Get information about media file](#get-information-about-media-file)
 - [Reduce file using CRF](#reduce-file-using-crf)
-- [Process multiple files in parallel](#process-multiple-files-in-parallel)
+- [Process multiple files in parallel in background](#process-multiple-files-in-parallel-in-background)
 - [Encoder speed/efficiency with `-preset` option](#encoder-speedefficiency-with--preset-option)
 - [Reduce bit rate to explicit value](#reduce-bit-rate-to-explicit-value)
 - [Recommended Bitrate Ranges (H.264)](#recommended-bitrate-ranges-h264)
@@ -74,29 +74,26 @@ Pros:
 
 Command:
 ```bash
-ffmpeg -i input.mp4 -c:v libx264 -crf 28 -c:a copy output.mp4
+ffmpeg -i input.mp4 -c:v libx264 -crf 28 -preset slow -c:a copy output.mp4
 ```
 - Lower CRF - higher quality (and bigger file)
-- Typical range: 18–28 (`-crf 24` - to keep a quality good, `-crf 28` - to reduce file size more)
+- Typical range: 18–28 (`-crf 23` - to keep a quality good, `-crf 24` - to reduce file size more)
 - `-c:v libx264` - re-encode video using H.264 (you can use libx265 for HEVC)
 - `-c:a copy` - copy audio stream without re-encoding
+- [`-preset slow`](#encoder-speedefficiency-with--preset-option)
 
-### Process multiple files in parallel
+### Process multiple files in parallel in background
 
-Run in foreground:
 ```bash
-parallel -j 4 ffmpeg -i {} -c:v libx264 -crf 24 -preset slow -c:a copy {.}_compressed.mp4 ::: *.mp4
+nohup parallel -j 4 ffmpeg -i {} -c:v libx264 -crf 23 -preset slow -c:a copy {.}_compressed.mp4 ::: *.mp4 > ffmpeg.log 2>&1 &
 ```
-- `parallel` runs jobs in parallel.
+- `nohup ${command} > ffmpeg.log 2>&1 &` - run `${command}` in background, logs into `ffmpeg.log`
+- `parallel` runs jobs in parallel
 - `-j` (e.g., `-j 4` for 4 parallel jobs) - to control concurrency
 - `{}` = placeholder for the input file.
 - `{.}` = filename without extension.
 - `::: *.mp4` = list of files to process.
 
-Run in background:
-```bash
-nohup parallel -j 4 ffmpeg -i {} -c:v libx264 -crf 23 -preset slow -c:a copy {.}_compressed.mp4 ::: *.mp4 > ffmpeg.log 2>&1 &
-```
 Check results:
 ```bash
 tail -f ffmpeg.log
