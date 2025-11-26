@@ -24,6 +24,7 @@ Linux Tools:
 - [ssh key-based authentication](docs/system/ssh.md)
 - [host keys and `known_hosts`](docs/system/host.keys.md)
 - [Fix `ssh: Could not resolve hostname xxx.com: Temporary failure in name resolution`](docs/system/ssh.md#fix-ssh-could-not-resolve-hostname-githubcom-temporary-failure-in-name-resolution)
+- [Network dns issues](docs/network.dns.md)
 
 ### Hardware topics
 - [Wi-Fi performance boost](docs/hardware/wifi.md)

@@ -58,7 +58,7 @@ bit_rate=192000
 
 ### Reduce file using CRF
 
-Reduce file using CRF (Constant Rate Factor) instead of fixed bitrate (Better Quality Control).
+Reduce file using CRF (Constant Rate Factor) - Better Quality Control - instead of fixed bitrate.
 
 What it does: Controls quality, not size. `FFmpeg` adjusts bitrate dynamically based on scene complexity.
 Range: 0–51 (lower = better quality, larger file)
