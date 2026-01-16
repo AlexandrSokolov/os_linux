@@ -8,6 +8,8 @@ This project covers:
 Linux Tools:
 - [Reduce media file size using `ffmpeg`](docs/ffmpeg/reduce.file.size.md)
 - [Rotate video file size using `ffmpeg`](docs/ffmpeg/rotate.file.md)
+- [Extract audio file from video using `ffmpeg`](docs/ffmpeg/extract.audio.from.video.md)
+- [All songs same loudness](docs/ffmpeg/extract.audio.from.video.md#all-songs-same-loudness)
 - [Convert Ravensburger `tiptoi` audio files to `mp3`](docs/tiptoi_to_mp3.md)
 
 ### Linux Command Line
