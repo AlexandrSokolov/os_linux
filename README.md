@@ -7,6 +7,7 @@ This project covers:
 
 Linux Tools:
 - [Reduce media file size using `ffmpeg`](docs/ffmpeg/reduce.file.size.md)
+- [Extract a segment from a video file](docs/ffmpeg/extract.segment.md)
 - [Rotate video file size using `ffmpeg`](docs/ffmpeg/rotate.file.md)
 - [Extract audio file from video using `ffmpeg`](docs/ffmpeg/extract.audio.from.video.md)
 - [All songs same loudness](docs/ffmpeg/extract.audio.from.video.md#all-songs-same-loudness)
