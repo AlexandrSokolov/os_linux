@@ -1,5 +1,6 @@
 
-- [Extracting just a segment](#extracting-just-a-segment)
+- [Extracting just a segment](extract.segment.md#extracting-just-a-segment)
+- [Extract audio from a video file with multiple audio streams](#extract-audio-from-a-video-file-with-multiple-audio-streams)
 - [High‑quality extraction, smaller file](#highquality-extraction-smaller-file)
 - [Best settings for speech (language learning)](#best-settings-for-speech-language-learning)
 - [Recommended Best Practice for music](#recommended-best-practice-for-music)
@@ -11,17 +12,32 @@
 - [Extremely quiet sources](#extremely-quiet-sources)
 - [Increase all file volumes AFTER loudness normalization](#increase-all-file-volumes-after-loudness-normalization)
 - [Batch extraction](#batch-extraction)
-  
-### Extracting just a segment
 
-1. If you want a specific part (e.g., 10:05 to 12:30):
-    ```bash
-    ffmpeg -ss 00:10:05 -to 00:12:30 -i input.mp4 -vn -acodec libmp3lame -b:a 128k output.mp3
-    ```
-2. If you want duration instead of end time:
-    ```bash
-    ffmpeg -ss 00:10:05 -t 30 -i input.mp4 output.mp3
-    ```
+### Extract audio from a video file with multiple audio streams
+
+Check existing audio streams:
+```bash
+ffprobe input.mp4
+```
+Example output for multiple audio streams:
+```text
+Stream #0:1(eng): Audio: aac (LC), 2 channels
+Stream #0:2(deu): Audio: ac3, 6 channels
+Stream #0:3(rus): Audio: dts, 6 channels
+```
+These stream indexes (0:1, 0:2, …) and language tags (eng, deu, rus) are what you’ll map.
+
+Extract the first audio stream by its index:
+```bash
+ffmpeg -i input.mkv -map 0:a:0 -c:a libmp3lame -b:a 192k output_en.mp3
+```
+Mapping syntax:
+```bash
+-map 0:a            # map all audio streams from input #0
+-map 0:a:0          # map the first audio stream
+-map 0:a:m:language:eng   # map audio stream(s) tagged as English
+-map 0:m:disposition:default  # map the stream flagged as default
+```
 
 ### High‑quality extraction, smaller file
 
