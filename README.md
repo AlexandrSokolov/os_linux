@@ -12,6 +12,9 @@ Linux Tools:
 - [Extract audio file from video using `ffmpeg`](docs/ffmpeg/extract.audio.from.video.md)
 - [All songs same loudness](docs/ffmpeg/extract.audio.from.video.md#all-songs-same-loudness)
 - [Convert Ravensburger `tiptoi` audio files to `mp3`](docs/tiptoi_to_mp3.md)
+- [Alarm Clock Applet](docs/usefull_tools/alarm.md)
+- [Screenshots](docs/usefull_tools/alarm.md)
+- [Screen recording](docs/usefull_tools/screen.recording.md)
 
 ### Linux Command Line
 
