@@ -59,10 +59,15 @@ apt list --upgradable
 
 ### Apply packages update
 
-```bash
-sudo apt-get upgrade
-```
-or automatically answers `yes` to any prompts:
+# APT Upgrade Modes — Comparison Table
+
+| Command                 | Installs New Dependencies | Removes Packages | Behavior Summary                                                                 | Best Use Case                                   |
+|-------------------------|---------------------------|------------------|----------------------------------------------------------------------------------|-------------------------------------------------|
+| `sudo apt-get upgrade`  | ❌ No                      | ❌ No             | Performs safe upgrades; skips packages that require adding/removing dependencies | Servers or minimal‑risk updates                 |
+| `sudo apt full-upgrade` | ✔ Yes                     | ✔ Yes            | Resolves dependency changes, installs new deps, removes obsolete ones            | Desktops; complete system upgrade (recommended) |
+
+
+Automatically answers `yes` to any prompts:
 ```bash
 sudo apt-get upgrade --yes
 ```
@@ -71,28 +76,12 @@ It only upgrades what it can without removing anything.
 
 ### Remove the unnecessary packages
 
-If an upgrade requires a new dependency, the `upgrade` command will download and install it, 
-but it will not remove the old dependency. 
-
-If you see a message similar to this after upgrading:
-> The following packages were automatically installed and are no longer required:
->   g++-8 gir1.2-mutter-4 libapache2-mod-php7.2 libcrystalhd3
-> Use 'sudo apt autoremove' to remove them.
-
-You can remove those unnecessary packages:
-```bash
-sudo apt autoremove
-```
-Remove together with the configuration files:
-```bash
-sudo apt autoremove --purge
-```
-Remove all downloaded `.deb` files from the package caches:
-```bash
-sudo apt clean
-```
-`autoclean` cleans obsolete deb-packages, less than `clean`
-
+| Command                                               | What It Removes                                    | Removes Config Files? | Description                                                                                              |
+|-------------------------------------------------------|----------------------------------------------------|-----------------------|----------------------------------------------------------------------------------------------------------|
+| `sudo apt autoremove`                                 | Unused packages automatically installed as deps    | ❌ No                  | Cleans up orphaned libraries, old kernels, and dependencies no longer required by any installed package. |
+| `sudo apt clean`                                      | Entire APT cache (`/var/cache/apt/archives`)       | —                     | Deletes all cached `.deb` files to free disk space. Does not affect installed packages.                  |
+| `sudo apt autoclean`                                  | Obsolete cached packages that cannot be downloaded | —                     | Removes only outdated or superseded `.deb` files from cache. Safe partial cleanup.                       |
+| `sudo apt purge $(dpkg -l \| awk '/^rc/ {print $2}')` | All leftover config files from removed packages    | ✔ Yes                 | Purges all system‑wide residual configs from previously removed packages.                                | 
 
 ### Not all the packages get updated
 
