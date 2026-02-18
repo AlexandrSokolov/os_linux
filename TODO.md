@@ -1,6 +1,21 @@
 ### java version update
 ### maven versoin update
 ### docker intallation, include tools into https://github.com/AlexandrSokolov/java_dev_environments
+
+### cron job
+
+See also docs in the docker-project
+
+cron job updates (probably create under os_linux project a separate doc)
+See also comments!!!
+All users, not only listed in /etc/password
+https://stackoverflow.com/questions/134906/how-do-i-list-all-cron-jobs-for-all-users
+include into https://github.com/AlexandrSokolov/bash_scripts/blob/master/README.md
+check results on
+ssh asokolov@bm-si-mediator.c1001.brandmaker.net
+[LIVE][asokolov@bm-si-mediator ~]$
+
+
 ### mp3 to text
 
 - [Convert speech (mp3 audio files) to text](https://askubuntu.com/questions/837408/convert-speech-mp3-audio-files-to-text)
