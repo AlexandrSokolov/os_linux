@@ -10,6 +10,7 @@ Linux Tools:
 - [Extract a segment from a video file](docs/ffmpeg/extract.segment.md)
 - [Rotate video file size using `ffmpeg`](docs/ffmpeg/rotate.file.md)
 - [Extract audio file from video using `ffmpeg`](docs/ffmpeg/extract.audio.from.video.md)
+  [Merge audio with video](docs/ffmpeg/merge.video.with.audio.md)
 - [All songs same loudness](docs/ffmpeg/extract.audio.from.video.md#all-songs-same-loudness)
 - [Convert Ravensburger `tiptoi` audio files to `mp3`](docs/tiptoi_to_mp3.md)
 - [Alarm Clock Applet](docs/usefull_tools/alarm.md)
