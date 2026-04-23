@@ -4,6 +4,7 @@ This project covers:
 - [System configuration topics](#system-configuration-topics)
 - [Hardware topics](#hardware-topics)
 - [Bash programming topics](#bash-programming-topics)
+- [Merge all files of Java project into a bundle for AI](scripts/adrian_copilot_bundle_project.sh)
 
 Linux Tools:
 - [Reduce media file size using `ffmpeg`](docs/ffmpeg/reduce.file.size.md)
